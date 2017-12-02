@@ -25,6 +25,18 @@
                     filter: 'isFile'
                 }
             ]
+        },
+        otherFiles:{
+            files: [
+                {
+                    cwd: '<%= path.sourcesRootPath %>/<%= dirName.other %>',
+                    src: '**/*',
+                    expand: true,
+                    flatten: true,
+                    dest: '<%= path.targetRootPath %>/<%= dirName.other %>/',
+                    filter: 'isFile'
+                }
+            ]
         }
     }
 

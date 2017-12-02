@@ -76,7 +76,7 @@ module.exports = function (grunt) {
         'clean:temporaryCSS' // clear tmp data
     ]);
 
-    // JS TASKS -------------------------------------------------------------------------------------------------------
+    // JS TASKS --------------------------------------------------------------------------------------------------------
     grunt.registerTask('ha-publish-js', 'Compile and optimize javascript files, clean the public scripts directory, and copy compressed scripts to public directory.', [
         'clean:publicJS', // clear published data
         'clean:temporaryJS', // clear tmp data
@@ -88,6 +88,11 @@ module.exports = function (grunt) {
         'clean:temporaryJS' // clear tmp data
     ]);
 
+    // CUSTOM FILES ----------------------------------------------------------------------------------------------------
+    grunt.registerTask('ha-publish-assets', 'Clean the public directory for custom files, and copy custom files to public directory.', [
+        'copy:otherFiles'
+    ]);
+
     // MAIN TASKS ------------------------------------------------------------------------------------------------------
     grunt.registerTask('build', 'Compile, optimize, and publish all resources to cleaned public directory.', [
         'clean:build', // remove published files
@@ -95,6 +100,7 @@ module.exports = function (grunt) {
         'ha-publish-images',
         'ha-publish-css',
         'ha-publish-js',
+        'ha-publish-assets',
         'clean:tmp'
     ]);
     grunt.registerTask('default', 'Alias for "build" task.', [
