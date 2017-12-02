@@ -30,22 +30,18 @@
                 '<%= path.tempFilesRootPath %>/*'
             ]
         },
-
         temporaryJS: {
             options: {force: true},
             src: [
                 '<%= path.tempFilesRootPath %>/<%= dirName.js %>/*'
             ]
         },
-
         publicJS: {
             options: {force: true},
             src: [
                 '<%= path.targetRootPath %>/<%= dirName.js %>/*'
             ]
         },
-
-
         publicCSS: {
             options: {force: true},
             src: [
@@ -56,6 +52,7 @@
             options: {force: true},
             src: [
                 '<%= path.tempFilesRootPath %>/<%= dirName.css %>/*',
+                '<%= path.tempFilesRootPath %>/sass/*'
             ]
         },
         publicImages: {
@@ -67,7 +64,7 @@
         temporaryImages: {
             options: {force: true},
             src: [
-                '<%= path.tempFilesRootPath %>/<%= dirName.img %>/*',
+                '<%= path.tempFilesRootPath %>/<%= dirName.img %>/*'
             ]
         }
     };

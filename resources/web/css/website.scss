@@ -1,6 +1,8 @@
 // include font definitions
 @import "fonts-definition/google-fonts.scss";
 
+// include bower scss
+@import "bower/bower.scss";
 
 .test {
     background: red;

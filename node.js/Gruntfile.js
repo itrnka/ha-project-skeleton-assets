@@ -68,6 +68,7 @@ module.exports = function (grunt) {
     grunt.registerTask('ha-publish-css', 'Compile and optimize CSS files, clean the public CSS directory, and copy compressed CSS files to public directory.', [
         'clean:publicCSS', // clear published data
         'clean:temporaryCSS', // clear tmp data
+        'bower_concat:pushCSSToProject',
         'sass:compile', // build css from scss
         'postcss:minify', // optimize css file
         'assets_hash:publicCSS', // create versions
@@ -79,6 +80,7 @@ module.exports = function (grunt) {
     grunt.registerTask('ha-publish-js', 'Compile and optimize javascript files, clean the public scripts directory, and copy compressed scripts to public directory.', [
         'clean:publicJS', // clear published data
         'clean:temporaryJS', // clear tmp data
+        'bower_concat:pushJSToProject',
         'uglify:prepare', //
         'uglify:optimize', //
         'assets_hash:publicJS', // create versions

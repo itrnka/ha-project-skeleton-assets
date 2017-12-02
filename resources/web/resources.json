@@ -9,6 +9,10 @@
         ]
     },
     "js": {
-        "banner": "/*! <%= pkg.name %> - v<%= pkg.version %>\nBuild <%= grunt.template.today(\"yyyy-mm-dd HH:MM:ss\") %>\nCopyright (c) <%= grunt.template.today(\"yyyy\") %> <%= pkg.author %> */\n"
+        "banner": "/*! <%= pkg.name %> - v<%= pkg.version %>\nBuild <%= grunt.template.today(\"yyyy-mm-dd HH:MM:ss\") %>\nCopyright (c) <%= grunt.template.today(\"yyyy\") %> <%= pkg.author %> */\n",
+        "libs": [
+            "<%= path.sourcesRootPath %>/vendor/hammer/hammer.min.js"
+        ],
+        "plugins": []
     }
 }

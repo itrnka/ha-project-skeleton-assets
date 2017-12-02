@@ -11,8 +11,9 @@
             },        
             files: {
                 '<%= path.targetRootPath %>/<%= dirName.js %>/<%= pkg.name %>-<%= pkg.version %>.min.js': [
-                    '<%= path.sourcesRootPath %>/<%= dirName.js %>/lib/**/*.js',
-                    '<%= path.sourcesRootPath %>/<%= dirName.js %>/plugin/**/*.js',
+                    '<%= path.sourcesRootPath %>/vendor/ha-framework/js/ha.js',
+                    '<%= path.tempFilesRootPath %>/<%= dirName.js %>/bower/bower-concatenated.js',
+                    '<%= project.js.libs %>',
                     '<%= path.sourcesRootPath %>/<%= dirName.js %>/scripts/**/*.js',
                     '<%= path.sourcesRootPath %>/<%= dirName.js %>/config.js',
                     '<%= path.sourcesRootPath %>/<%= dirName.js %>/main.js'

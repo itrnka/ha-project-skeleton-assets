@@ -1,0 +1,21 @@
+{
+    "name": "my-bower",
+    "description": "",
+    "main": "",
+    "authors": [
+        "undefined"
+    ],
+    "license": "undefined",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "fotorama": "^4.6.4",
+        "jquery": "^3.2.1"
+    }
+}

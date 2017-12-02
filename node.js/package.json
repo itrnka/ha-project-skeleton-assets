@@ -11,6 +11,8 @@
         "cssnano": "^3.10.0",
         "dialog-polyfill": "^0.4.7",
         "grunt": "^1.0.1",
+        "grunt-assets-hash": "^0.1.4",
+        "grunt-bower-concat": "^1.0.0",
         "grunt-contrib-clean": "^1.1.0",
         "grunt-contrib-compress": "^1.4.3",
         "grunt-contrib-concat": "^1.0.1",
@@ -23,13 +25,10 @@
         "grunt-newer": "^1.3.0",
         "grunt-pngquant": "^0.1.8",
         "grunt-postcss": "^0.8.0",
+        "imagemin-advpng": "^3.1.0",
+        "imagemin-mozjpeg": "^5.1.0",
         "load-grunt-config": "^0.19.2",
         "load-grunt-tasks": "^3.5.2",
         "time-grunt": "^1.4.0"
-    },
-    "dependencies": {
-        "grunt-assets-hash": "^0.1.4",
-        "imagemin-advpng": "^3.1.0",
-        "imagemin-mozjpeg": "^5.1.0"
     }
 }
