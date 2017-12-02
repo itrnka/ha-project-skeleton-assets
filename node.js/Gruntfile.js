@@ -1,7 +1,5 @@
 'use strict';
 
-var colors = require('colors');
-
 module.exports = function (grunt) {
 
     // see http://yeoman.io/blog/performance-optimization.html
