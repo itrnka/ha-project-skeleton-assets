@@ -1,0 +1,1 @@
+Please add here your plugins. Plugin is in this case some pack with *css* and *js* files.

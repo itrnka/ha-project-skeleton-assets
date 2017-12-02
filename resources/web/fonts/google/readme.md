@@ -1,0 +1,1 @@
+This is dynamic directory used by google fonts download task. Please use *../custom* path for your custom fonts.

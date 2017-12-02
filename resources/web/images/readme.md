@@ -1,0 +1,1 @@
+Please add your images here, optimized images will be copied to public images directory via grunt task.

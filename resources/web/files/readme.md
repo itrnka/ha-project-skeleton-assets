@@ -1,0 +1,1 @@
+This directory can contain other files, such as *.pdf, etc.
