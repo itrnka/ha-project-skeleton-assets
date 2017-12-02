@@ -1,10 +1,7 @@
 {
-    "name": "my-bower",
+    "name": "my-project",
     "description": "",
     "main": "",
-    "authors": [
-        "undefined"
-    ],
     "license": "undefined",
     "private": true,
     "ignore": [
@@ -15,7 +12,6 @@
         "tests"
     ],
     "dependencies": {
-        "fotorama": "^4.6.4",
-        "jquery": "^3.2.1"
+        
     }
 }

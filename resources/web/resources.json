@@ -11,7 +11,8 @@
     "js": {
         "banner": "/*! <%= pkg.name %> - v<%= pkg.version %>\nBuild <%= grunt.template.today(\"yyyy-mm-dd HH:MM:ss\") %>\nCopyright (c) <%= grunt.template.today(\"yyyy\") %> <%= pkg.author %> */\n",
         "libs": [
-            "<%= path.sourcesRootPath %>/vendor/hammer/hammer.min.js"
+            "<%= path.sourcesRootPath %>/vendor/some-lib1/some-lib1.min.js",
+            "<%= path.sourcesRootPath %>/vendor/some-lib2/some-lib2.min.js"
         ],
         "plugins": []
     }
