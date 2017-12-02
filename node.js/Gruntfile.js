@@ -2,7 +2,6 @@
 
 module.exports = function (grunt) {
 
-    // see http://yeoman.io/blog/performance-optimization.html
     require('load-grunt-tasks')(grunt);
     require('load-grunt-config')(grunt);
     require('time-grunt')(grunt);
@@ -29,13 +28,6 @@ module.exports = function (grunt) {
         })
     ));
 
-    // /**
-    //  * Update actual package.json version in gruntConfig object.
-    //  */
-    // grunt.task.registerTask('update-project-version', 'Update actual project version.', function() {
-    //     gruntConfig.pkg = grunt.file.readJSON('package.json');
-    // });
-    
     // IMAGES TASKS ----------------------------------------------------------------------------------------------------
     grunt.registerTask('ha-publish-images', 'Optimizes all images and replaces these images in a public folder.', [
         'clean:publicImages', // remove published images
@@ -104,5 +96,10 @@ module.exports = function (grunt) {
     grunt.registerTask('default', 'Alias for "build" task.', [
         'build'
     ]);
+
+    // TODO ------------------------------------------------------------------------------------------------------------
+    // see http://yeoman.io/blog/performance-optimization.html:
+    // -- svg min
+    // -- add js without compiling (concatenate compiled with other)
 
 };
