@@ -24,7 +24,7 @@
                 length: 40,
                 algorithm: 'sha1',
                 removeFromPath: '<%= path.publicRootPath %>',
-                jsonFile: '<%= path.targetRootPath %>/<%= dirName.js %>/versions.json',
+                jsonFile: '<%= path.targetRootPath %>/<%= dirName.js %>/<%= pkg.name %>-<%= pkg.version %>/versions.json',
                 clear: true
             },
             files: {

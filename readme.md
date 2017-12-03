@@ -248,3 +248,36 @@ Including steps:
   - your custom js logic from `{projectRoot}/resources/vendor/assets/js/scripts/**.js`
   - your custom js configuration `{projectRoot}/resources/vendor/assets/js/config.js`
   - your main js runner (funcionality initialization) `{projectRoot}/resources/vendor/assets/js/main.js`
+
+
+### Including JS and CSS to HTML files.
+
+Current versions of your files is stored in map files with name `versions.json`, e.g.:
+
+```json
+{
+  "/static/js/my-project-1.0.0/min.dev.js": "/static/js/my-project-1.0.0/min.dev.06d05048e9038911d670171c17723c11cc55dd1b.js",
+  "/static/js/my-project-1.0.0/min.production.js": "/static/js/my-project-1.0.0/min.production.e853fa3ba1e6ff5cee8ee311a5af0953cda55350.js",
+}
+```
+
+
+Example in pure php from public directory:
+
+```php
+// load compiled js from version file
+$versions = json_decode(file_get_contents('./static/js/my-project-1.0.0/versions.json'));
+foreach ($versions AS $name => $file) {
+    if (strpos($name, '/min.dev.js') !== false) {
+        echo "<script type=\"text/javascript\" src=\"{$file}\"></script>\n";
+    }
+}
+// load compiled css from version file
+$versions = json_decode(file_get_contents('./static/css/versions.json'));
+foreach ($versions AS $name => $file) {
+    if (strpos($name, '.css') !== false) {
+        echo "<link href=\"{$file}\" rel=\"stylesheet\" type=\"text/css\" />\n";
+    }
+}
+```
+
