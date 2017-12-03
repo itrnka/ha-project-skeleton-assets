@@ -14,7 +14,7 @@ module.exports = function (grunt) {
         path: grunt.file.readJSON('config/grunt/paths.json'),
         dirName: grunt.file.readJSON('config/grunt/dirNames.json')
     };
-    gruntConfig.project = grunt.file.readJSON(gruntConfig.path.sourcesRootPath + '/resources.json');
+    gruntConfig.project = grunt.file.readJSON(gruntConfig.path.sourcesRootPath + '/assets-configuration.json');
 
     /**
      * Register tasks.
@@ -73,6 +73,9 @@ module.exports = function (grunt) {
         'bower_concat:pushJSToProject',
         'uglify:prepare', //
         'uglify:optimize', //
+        'concat:concatFinalJS', //
+        'uglify:finalizeDebugFile', //
+        'uglify:finalizeProductionFile', //
         'assets_hash:publicJS', // create versions
         'compress:js', // create gz files, useful for nginx gzip-static flag
         'clean:temporaryJS' // clear tmp data
@@ -100,6 +103,5 @@ module.exports = function (grunt) {
     // TODO ------------------------------------------------------------------------------------------------------------
     // see http://yeoman.io/blog/performance-optimization.html:
     // -- svg min
-    // -- add js without compiling (concatenate compiled with other)
 
 };

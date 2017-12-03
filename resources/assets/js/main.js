@@ -2,6 +2,7 @@
     'use strict';
 
     // TODO your custom app logic
+    console.info('main.js started');
 
     $(document).ready(function(){
 
@@ -19,5 +20,7 @@
         console.log('staticMultiplier.multiply() test', staticMultiplier.multiply(3.3));
 
     });
+
+    console.info('main.js finished');
 
 })();

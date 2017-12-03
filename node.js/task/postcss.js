@@ -23,15 +23,15 @@
                     cwd: '<%= path.tempFilesRootPath %>/<%= dirName.css %>/',
                     src: [
                         '*.css'
-                    ],                
+                    ],
                     expand: true,
                     dest: '<%= path.targetRootPath %>/<%= dirName.css %>/',
                     ext: '.css',
                     extDot: 'last'
-                }            
+                }
             ]
         }
-            
+
     };
 
 })();

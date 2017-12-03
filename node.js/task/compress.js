@@ -34,7 +34,7 @@
             files: [
                 {
                     expand: true,
-                    src: ['<%= path.targetRootPath %>/<%= dirName.js %>/**/*.js'],
+                    src: ['<%= path.targetRootPath %>/<%= dirName.js %>/<%= pkg.name %>-<%= pkg.version %>/**/*.js'],
                     dest: '',
                     ext: '.js.gz',
                     extDot: 'last'

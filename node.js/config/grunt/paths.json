@@ -1,6 +1,6 @@
 {
     "tempFilesRootPath": "temp/grunt-tmp",
-    "sourcesRootPath": "../resources/web",
+    "sourcesRootPath": "../resources/assets",
     "targetRootPath": "../public/static",
     "publicRootPath": "../public"
 }

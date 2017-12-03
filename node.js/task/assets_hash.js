@@ -28,7 +28,7 @@
                 clear: true
             },
             files: {
-                src: '<%= path.targetRootPath %>/<%= dirName.js %>/*.js',
+                src: '<%= path.targetRootPath %>/<%= dirName.js %>/<%= pkg.name %>-<%= pkg.version %>/**/*.js',
                 filter: 'isFile'
             }
         }

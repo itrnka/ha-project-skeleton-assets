@@ -7,7 +7,7 @@
             src: [
                 '<%= path.tempFilesRootPath %>/*',
                 '<%= path.targetRootPath %>/<%= dirName.css %>/*',
-                '<%= path.targetRootPath %>/<%= dirName.js %>/*',
+                '<%= path.targetRootPath %>/<%= dirName.js %>/<%= pkg.name %>-<%= pkg.version %>/*',
                 '<%= path.targetRootPath %>/<%= dirName.font %>/*',
                 '<%= path.targetRootPath %>/<%= dirName.img %>/*'
             ]
@@ -39,7 +39,7 @@
         publicJS: {
             options: {force: true},
             src: [
-                '<%= path.targetRootPath %>/<%= dirName.js %>/*'
+                '<%= path.targetRootPath %>/<%= dirName.js %>/<%= pkg.name %>-<%= pkg.version %>/*'
             ]
         },
         publicCSS: {

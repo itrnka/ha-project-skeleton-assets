@@ -1,0 +1,34 @@
+{
+    "fonts": {
+        "googleFontsList": [
+            {
+                "family": "Roboto",
+                "subsets": ["latin-ext"],
+                "styles": ["100", "100i", "300", "300i", "400", "400i", "500", "500i", "700", "700i", "900", "900i"]
+            }
+        ]
+    },
+    "css": {
+    },
+    "js": {
+        "supportForOldIE": true,
+        "banner": "/*! <%= pkg.name %> - v<%= pkg.version %>\nBuild <%= grunt.template.today(\"yyyy-mm-dd HH:MM:ss\") %>\nCopyright (c) <%= grunt.template.today(\"yyyy\") %> <%= pkg.author %> */\n",
+        "libs": {
+            "compile": [
+                "<%= path.sourcesRootPath %>/vendor/some-lib1/some-lib1.min.js",
+                "<%= path.sourcesRootPath %>/vendor/some-lib2/some-lib2.min.js"
+            ],
+            "copy": [
+                "<%= path.sourcesRootPath %>/vendor/some-lib3/some-lib3.min.js"
+            ]
+        },
+        "plugins": {
+            "compile": [
+
+            ],
+            "copy": [
+
+            ]
+        }
+    }
+}

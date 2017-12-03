@@ -10,7 +10,7 @@
     // load compiled js from version file
     $versions = json_decode(file_get_contents('./static/js/versions.json'));
     foreach ($versions AS $name => $file) {
-        if (strpos($name, '.min.optimized.js') !== false) {
+        if (strpos($name, '/min.dev.js') !== false) {
             echo "<script type=\"text/javascript\" src=\"{$file}\"></script>\n";
         }
     }
