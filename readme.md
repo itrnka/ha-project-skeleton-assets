@@ -138,3 +138,113 @@ All files will be saved after compiling and optimizing in `{projectRoot}/public/
     }
 }
 ```
+
+
+### Working with javascript
+
+Start you logic in file `{projectRoot}/resources/assets/js/main.js`. This file runs your js application (js logic start). If you can use configuration for your logic, place this configuration to `{projectRoot}/resources/assets/js/config.js`, e.g.:
+
+```javascript
+var cfg = {
+    MY_VALUE1: 'xyz',
+    MY_VALUE2: 123,
+}
+```
+This configuration will be available in your `main.js` file, e.g. (*main.js*):
+
+```javascript
+(function () {
+    'use strict';
+
+    // TODO your custom app logic
+    $(document).ready(function(){
+        console.info(cfg.MY_VALUE1);
+    });
+
+})();
+```
+
+In your main.js use custom initialization logic, setup handlers, etc. Your custom classes and other functionality files store please in folder  `{projectRoot}/resources/assets/js/scripts`.
+
+Javascript *ha* framework provides nice namespace initialization.
+
+```javascript
+ha.createNamespace('my.some.dot.separated.namespace.value');
+// this creates object: my.some.dot.separated.namespace.value with NULL value
+```
+
+So we can simply create simulated class in some javascript file, e.g.:
+
+```javascript
+// create namespace object (init tree path to class)
+ha.createNamespace('example.classes.NumberMultiplier');
+
+// define class example.NumberMultiplier:
+example.classes.NumberMultiplier = function(someArgument) {
+
+    // prevent 'this' issues
+    var _self = this;
+
+    // private property example
+    var multiplier = 10;
+    var classConstructorArgument1 = someArgument;
+
+    // public property example
+    _self.description = 'Example class in native javascript.';
+
+    // private method example
+    var multiplyNumber = function(value) {
+        return (value * multiplier); // example usage of private property 'multiplier'
+    };
+
+    // public method example
+    _self.multiply = function(value) {
+        return multiplyNumber(value); // example usage of private method 'multiplyNumber()'
+    };
+
+};
+```
+
+This pseudo class may be used as:
+
+```javascript
+var multiplier = new example.classes.NumberMultiplier();
+var value = multiplier.multiply(3.3);
+```
+
+#### Building and publishing you javascript application
+
+Run task `grunt ha-publish-js` from *node.js* directory. This will compile all defined and required scripts and publish compiled files to public directory. Compilation result is two files: `min.production.{hash}.js` (all console calls are removed) and `min.dev.{hash}.js` (supports *console* commands). 
+
+Directory name in public js directory for your files is extracted from `{projectRoot}/node.js/package.json` (key *name* + key *version*), so you can change this values (also in future for newer versions). Path is in background used as `<%= path.targetRootPath %>/<%= dirName.js %>/<%= pkg.name %>-<%= pkg.version %>/min.dev.js`.
+
+Compiled file has banner (comment at the beginning of compiled file) and this banner is by default also builded from `{projectRoot}/node.js/package.json` (key *name* + key *version* + key *author*). This banner can be changed in cofiguration file `{projectRoot}/resources/assets/assets-configuration.json` (key *js.banner*).
+
+#### Add new library or plugin via Bower
+
+- use bower `bower install {myplugin}` from *node.js* directory
+- run task `grunt ha-publish-js`  from *node.js* directory
+
+#### Add new library or plugin manually
+
+- copy your files to some subdirectory in `{projectRoot}/resources/assets/vendor` and add required files to configuration file `{projectRoot}/resources/assets/assets-configuration.json`. If this file is library, use path `js.libs.compile` in your JSON. If this file is library plugin, use path `js.plugins.compile` in your JSON. 
+- run task `grunt ha-publish-js`  from *node.js* directory
+- if compilation throws an error, use path `js.libs.copy` or `js.plugins.copy` in your JSON and this file will not be optimized during compilation.
+
+> Example path to vendor javascript file suppotred in config file: `<%= path.sourcesRootPath %>/vendor/some-lib1/some-lib1.min.js`:
+
+
+#### How compilation works
+
+Including steps:
+
+- js libraries from configuration `js.libs.copy`
+- js plugins from configuration `js.plugins.copy`
+- function, which wraps these files (function body will be optimized and recompiled):
+  - ha framework functionality `{projectRoot}/resources/assets/vendor/ha-framework/js/ha.js`
+  - js scripts installed by *Bower*
+  - js libraries from configuration `js.libs.compile`
+  - js plugins from configuration `js.plugins.compile`
+  - your custom js logic from `{projectRoot}/resources/vendor/assets/js/scripts/**.js`
+  - your custom js configuration `{projectRoot}/resources/vendor/assets/js/config.js`
+  - your main js runner (funcionality initialization) `{projectRoot}/resources/vendor/assets/js/main.js`
