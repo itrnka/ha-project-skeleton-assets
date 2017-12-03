@@ -23,7 +23,7 @@ All static files must be saved in the `{projectRoot}/resources/assets` folder. A
 
 ### Grunt tasks
 
-- `grunt build`
+- `grunt build` or `grunt` - Run all tasks, publish all to public folder.
 - `grunt ha-publish-images` - Optimizes all images and replaces these images in a public folder.
 - `grunt ha-download-fonts` - Download fonts from google fonts and create associated scss file for sass.
 - `grunt ha-publish-fonts` - Delete public fonts and publish current fonts.
@@ -236,7 +236,7 @@ Compiled file has banner (comment at the beginning of compiled file) and this ba
 
 #### How compilation works
 
-Including steps:
+**Including steps:**
 
 - js libraries from configuration `js.libs.copy`
 - js plugins from configuration `js.plugins.copy`
